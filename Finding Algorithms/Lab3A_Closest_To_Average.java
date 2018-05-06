@@ -51,7 +51,7 @@ public class Lab3A_Closest_To_Average
         //print out that array element
         System.out.println(arr[index]);
         
-        //Make not need for HackerRank
+        //May not need to end the scanner for HackerRank, it's only for memory management
         sc.close();
     }       
 }
