@@ -14,7 +14,6 @@ public class Insertion_Shedford
 	//Insertion sort method
 	public static int[] insertion(int[] arr) //ascending order
 	{ 
-
 		for(int i = 1; i < arr.length; i++){
 			int record = i;
 			int temp = arr[i]; //Back up the current element
@@ -22,7 +21,7 @@ public class Insertion_Shedford
 				if(arr[j - 1] >= temp){
 					record = j - 1; //Keep track of the best position found so far to place current element
 					arr[j] = arr[j - 1]; //Shift elements up to make room for insertion
-				}
+			}
 			arr[record] = temp; //Place the current element in the best position found
 		}
 		return arr;
