@@ -12,11 +12,10 @@ public class Anya_nearestPrecedingPrime {
 	}
 	
 	public static void sieveOEApproach (int n) {
-		//As we don't know how big the nth prime number is, sieve is not the best approach
-		//but if you decided use it then
-		//we have to make our array quite large ( 2n is enough, you could look
-		//up for "Bertrand's postulate"
-		boolean sieve[] = new boolean[2*n];
+		/*As we don't know how big the nth prime number is, sieve is not the best approach
+		but if you decided use it then we have to make our array quite large ( 2n is enough, 
+		you could look for "Bertrand's postulate"
+		boolean sieve[] = new boolean[2*n];*/
 		
 		// no need to set 0 and 1 to false since they`re false by default 
 		for(int i = 2; i < sieve.length; i++) {
