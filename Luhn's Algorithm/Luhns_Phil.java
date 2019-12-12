@@ -23,7 +23,7 @@ public class Luhns_Phil {
         	//even numbers
             	if( i % 2 == 0) {
 			//multiply even numbers by 2
-			digit = digit * 2;
+			digit *= 2;
             	}
 
 	    	//if they are greater than 9, minus 9
