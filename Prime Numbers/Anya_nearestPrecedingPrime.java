@@ -2,13 +2,13 @@ package Solutions_2017;
 import java.util.Scanner;
 
 public class Anya_nearestPrecedingPrime {
-	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	int n = sc.nextInt();
-	sieveOEApproach(n);
-	secondApproach(n);
-	
-	sc.close();
+		public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sieveOEApproach(n);
+		secondApproach(n);
+
+		sc.close();
 	}
 	
 	public static void sieveOEApproach (int n) {
@@ -67,10 +67,8 @@ public class Anya_nearestPrecedingPrime {
 			
 			else { // else print the difference between two nearest primes
 				System.out.println(secondHalfPrime - firstHalfPrime);
-			}
-	
+			}	
 	}
-	
 	
 	public static void secondApproach(int n) { 
 		int firstHalfPrime = 0;
@@ -81,9 +79,7 @@ public class Anya_nearestPrecedingPrime {
 				break; // break immediately after finding nearest prime
 			}
 		}
-		
 	int secondHalfPrime = 0;
-	
 	int j = n + 1;
 	
 	while (true) { // infinite loop
@@ -91,7 +87,6 @@ public class Anya_nearestPrecedingPrime {
 			secondHalfPrime = j; // save it
 			break; // break immediately after finding nearest prime
 		}
-		
 		// if not continue iterating
 		j++; 
 	}
@@ -118,4 +113,3 @@ public class Anya_nearestPrecedingPrime {
 		return true;
 	}
 }
-
