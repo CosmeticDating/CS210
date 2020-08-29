@@ -19,7 +19,6 @@ public class Lab8_FrontOfQueue {
 	        if(arr[0].equals("STOP")) {
 			break;
 	        }
-	
 	        // If string is not "STOP" and array element is 0, insert "INSERT"
 	        else if(arr[0].equals("INSERT")) {
 	            myQueue.insert(arr[1]);
@@ -32,8 +31,7 @@ public class Lab8_FrontOfQueue {
 	            	 myQueue.remove();
 	            }
 	        }
-	        	sc.close();
-	                   
+	        	sc.close();        
 		}
 		System.out.println(myQueue.remove());
     }
@@ -64,7 +62,6 @@ class Queue {
 		if(rear == maxSize-1) {
 			rear = -1;
 		}
-
 		rear++;
 		queueArray[rear] = x;
 		nItems++;
@@ -77,13 +74,11 @@ class Queue {
 			System.out.println("Queue is empty");
 			return null;
 		}
-		
 		String temp = queueArray[front];
 		front++;
 		
 		//Dealing with wrap-around again
-		if(front == maxSize) 
-		{
+		if(front == maxSize) {
 			front = 0;
 		}
 		nItems--;
