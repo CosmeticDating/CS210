@@ -22,37 +22,29 @@ Sample Output
 1073741824
 
 **/
-public class Lab10A2_Byte_Manipulation
-{
-    public static void main(String args[] ) throws Exception
-    {
+public class Lab10A2_Byte_Manipulation {
+    public static void main(String args[] ) throws Exception {
         Scanner input = new Scanner(System.in);
-
         int n = input.nextInt();
         int record = n;
 
         //32 bits makes up the range of integers
-        for (int i = 0; i < 32; i++) 
-        {
+        for (int i = 0; i < 32; i++) {
         	//when to shift left
-            if (n << i > record)
-            {
+            if (n << i > record) {
                 record = n << i;
             }
 
-            //when to signed right shift
-            if (n >> i > record)
-            {
+            // when to signed right shift
+            if (n >> i > record) {
                 record = n >> i;
             }
 
-            //when to unsigned right shift
-            if (n >>> i > record)
-            {
+            // when to unsigned right shift
+            if (n >>> i > record) {
                 record = n >>> i;
             }
         }
-        
         System.out.println(record);
         input.close();
     }
