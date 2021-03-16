@@ -4,18 +4,15 @@ package Previous_Labs;
 
 import java.util.Scanner;
 
-public class Lab3_ClosestToAverage
-{
-	public static void main(String args[])
-	{
+public class Lab3_ClosestToAverage {
+	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 
 		int size = sc.nextInt();
 		int arr[] = new int[size];
 		double sum = 0;
 
-		for(int i = 0; i < size; i++)
-		{
+		for(int i = 0; i < size; i++) {
 			//Type in the integer values
 			arr[i] = sc.nextInt();
 			
@@ -35,14 +32,11 @@ public class Lab3_ClosestToAverage
 		double record = Math.abs(arr[0] - avg); 
 		int index = 0;
 
-		for(int i = 1; i < size; i++)
-		{
+		for(int i = 1; i < size; i++) {
 			//Cycle through to find the closest
 			double temp = Math.abs(arr[i] - avg);
 			
-			
-			if(temp < record)
-			{ 
+			if(temp < record) { 
 				//When closest to average is found as temperature, the value is transfered to record
 				record = temp;
 				
