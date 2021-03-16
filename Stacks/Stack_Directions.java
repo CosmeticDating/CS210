@@ -1,21 +1,16 @@
 package Stacks;
 import java.util.Stack;
 
-public class Stack_Directions 
-{
+public class Stack_Directions {
 	//Using Stack class for stack implementation
 	static Stack<Character> st = new Stack<>();
 	
 	// Below is a recursive function that inserts an element
 	// at the bottom of a stack.
-	static void insert_at_bottom(char x)
-	{
-	
+	static void insert_at_bottom(char x) {
 		if(st.isEmpty())
 			st.push(x);
-	
-		else
-		{
+		else {
 			/* All items are held in Function Call Stack until we
 			reach end of the stack. When the stack becomes
 			empty, the st.size() becomes 0, the
@@ -34,10 +29,8 @@ public class Stack_Directions
 	
 	// Below is the function that reverses the given stack using
 	// insert_at_bottom()
-	static void reverse()
-	{
-		if(st.size() > 0)
-		{
+	static void reverse() {
+		if(st.size() > 0) {
 			/* Hold all items in Function Call Stack until we
 			reach end of the stack */
 			char x = st.peek();
@@ -53,8 +46,7 @@ public class Stack_Directions
 	}
 	
 	// Driver method
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		//Push elements into the stack
 		st.push('1');
 		st.push('2');
@@ -62,15 +54,12 @@ public class Stack_Directions
 		st.push('4');
 		
 		System.out.println("Original Stack");
-		
 		System.out.println(st);
 		
 		//Function to reverse the stack
 		reverse();
 		
 		System.out.println("Reversed Stack");
-		
 		System.out.println(st);
 	}
-
 }
