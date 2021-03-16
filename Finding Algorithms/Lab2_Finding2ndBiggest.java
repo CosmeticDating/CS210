@@ -8,21 +8,18 @@ package Previous_Labs;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Lab2_Finding2ndBiggest
-{
-	public static void main(String args[])
-	{
+public class Lab2_Finding2ndBiggest {
+	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 
 		//Take in the size of the array
 		int n = sc.nextInt(); 
-
 		int arr[] = new int[n];
 
 		//Populate the array
-		for(int i = 0; i < n; i++) 
+		for(int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
-
+		}
 		//Sort the array in ascending order
 		Arrays.sort(arr); 
 
