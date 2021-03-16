@@ -61,10 +61,8 @@ values1: {[}] contains unmatched braces between a matched pair in the substrings
 **/
 
 //(courtesy of Conor Kerrigan)
-public class Lab7A_Brackets
-{
-	public static class Stack 
-	{ 
+public class Lab7A_Brackets {
+	public static class Stack { 
 	     /* size of stack array */
 	     private int maxSize;
 	     private Object[] stackArray;
@@ -73,8 +71,7 @@ public class Lab7A_Brackets
 	     private int top;
 	
 	     /* constructor */
-	     public Stack(int s) 
-	     {
+	     public Stack(int s) {
 	    	   // set array size
 	           maxSize = s; 
 	
@@ -86,109 +83,94 @@ public class Lab7A_Brackets
 	     }
 	
 	     /* put item on top of stack */
-	     public void push(Object j) 
-	     {
+	     public void push(Object j) {
 	           top++;
-	           
 	           // increment top, insert item
 	           stackArray[top] = j; 
 	     }
 	
 	     /* take item from top of stack */
-	     public Object pop() 
-	     {
+	     public Object pop() {
 	    	   // access item, decrement top
 	           return stackArray[top--]; 
 	     }
 	
 	      /* peek at top of stack */
-	     public Object peek() 
-	     {
+	     public Object peek() {
 	           return stackArray[top];
 	     }
 	
 	     /* true if stack is empty */
-	     public boolean isEmpty() 
-	     {
+	     public boolean isEmpty() {
 	           return (top == -1);
 	     }
 	
 	     /* true if stack is full */
-	     public boolean isFull() 
-	     {
+	     public boolean isFull() {
 	           return (top == maxSize - 1);
 	     }
 	
 	     /* empty stack */
-	     public void makeEmpty() 
-	     {
+	     public void makeEmpty() {
 	           top = -1;
 	     }
 	
-		public static boolean parenthesesMatching(String string) 
-		{
-	           char b1;
-	           char b2;
-	
-	           Stack theStack = new Stack(20);
-	
-	           for (int i = 0; i < string.length(); i++) 
-	           {
-	                b1 = string.charAt(i);
-	
-	                // Opening brackets are placed on a stack
-	                if (b1 == '{' || b1 == '(' || b1 == '[' || b1 == '<') 
-	                {
-	                     theStack.push(b1);
-	                }
-	
-	                // When the program comes across a closing bracket it pops from
-	                // the ‘opening bracket stack’ and this should match
-	                if (b1 == '}' || b1 == ')' || b1 == ']' || b1 == '>') 
-	                {
-	                     if (theStack.isEmpty())
-	                           return false;
-	
-	                     b2 = (char) theStack.pop();
-	
-	                     switch (b2) 
-	                     {
-		                     case '{':
-		                           if (b1 != '}')
-		                                return false;
-		                           break;
-		
-		                     case '(':		
-		                           if (b1 != ')')
-		                                return false;
-		                           break;
-		
-		                     case '[':		
-		                           if (b1 != ']')
-		                                return false;
-		                           break;
-		
-		                     case '<':		
-		                           if (b1 != '>')
-		                                return false;
-	                     }
-	                }
-	           }
-	           return (theStack.isEmpty());
-	     }
-	
-	    /*
-	     * Complete the function below.
-	     */
-	    static String[] braces(String[] values) 
-	    {
-	        String[] res = new String[values.length];
-	
-	       for (int i = 0; i < values.length; i++) 
-	       {
-	           res[i] =  parenthesesMatching(values[i]) ? "YES": "NO";
-	       }
-	        return res;
-	    }
-	}
+	     public static boolean parenthesesMatching(String string) {
+	        char b1;
+	        char b2;
+	        Stack theStack = new Stack(20);
+
+	        for (int i = 0; i < string.length(); i++) {
+		     b1 = string.charAt(i);
+
+		     // Opening brackets are placed on a stack
+		     if (b1 == '{' || b1 == '(' || b1 == '[' || b1 == '<') {
+		          theStack.push(b1);
+		     }
+
+		     // When the program comes across a closing bracket it pops from
+		     // the ‘opening bracket stack’ and this should match
+		     if (b1 == '}' || b1 == ')' || b1 == ']' || b1 == '>') {
+		          if (theStack.isEmpty())
+			        return false;
+
+		          b2 = (char) theStack.pop();
+
+		          switch (b2) {
+			     case '{':
+				   if (b1 != '}')
+					return false;
+				   break;
+
+			     case '(':		
+				   if (b1 != ')')
+					return false;
+				   break;
+
+			     case '[':		
+				   if (b1 != ']')
+					return false;
+				   break;
+
+			     case '<':		
+				   if (b1 != '>')
+					return false;
+		          }
+		     }
+	        }
+	        return (theStack.isEmpty());
+     }
+
+    /*
+     * Complete the function below.
+     */
+    static String[] braces(String[] values) {
+	String[] res = new String[values.length];
+
+       for (int i = 0; i < values.length; i++) {
+	   res[i] =  parenthesesMatching(values[i]) ? "YES": "NO";
+       }
+	return res;
+    }
+}
 }
