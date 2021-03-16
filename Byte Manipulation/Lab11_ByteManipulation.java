@@ -4,10 +4,8 @@ package Previous_Labs;
 //Print the answer as an integer.
 import java.util.*;
 
-public class Lab11_ByteManipulation
-{
-    public static void main(String args[])
-    {
+public class Lab11_ByteManipulation {
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(); sc.nextLine();
         
@@ -16,11 +14,11 @@ public class Lab11_ByteManipulation
 
 		//If n is negative there will automatically be 32 digits
         //If the number is positive you have to add zeroes to make up 32 digits
-        if(n >= 0)
-        { 
+        if(n >= 0) { 
             String pad = "";
             for(int i = 0; i < 32 - num.length(); i++)
                 pad = pad + 0;
+	    }
             num = pad + num;
         }
         
@@ -33,9 +31,8 @@ public class Lab11_ByteManipulation
         String order = sc.nextLine();
         String finalNum = "";
         
-        //Re-arrange the bytes in the given order
-        for(int i = 0; i < 4; i++)
-        {
+        // Re-arrange the bytes in the given order
+        for(int i = 0; i < 4; i++) {
             if(order.charAt(i) == '4')
                 finalNum = finalNum+byte4;
             else if(order.charAt(i) == '3')
@@ -47,31 +44,28 @@ public class Lab11_ByteManipulation
         }
         
         boolean check = false;
-        //If the re-arranged number is negative, invert all the bits
-        if(finalNum.charAt(0) == '1')
-        {
+        // If the re-arranged number is negative, invert all the bits
+        if(finalNum.charAt(0) == '1') {
             check = true;
             String finalNum2 = "";
-            for(int i = 0; i < finalNum.length(); i++)
-            {
-                if(finalNum.charAt(i) == '1')
+            for(int i = 0; i < finalNum.length(); i++) {
+                if(finalNum.charAt(i) == '1') {
                     finalNum2 = finalNum2 + "0";
-                else
+		} else {
                     finalNum2 = finalNum2 + "1";
-            }
+		}
+	    }
             finalNum = finalNum2;
         }
         int result;
         
-        //If the number is negative convert it to an integer and finish converting it from two's complement
-        if(check == true)
-        {
+        // If the number is negative convert it to an integer and finish converting it from two's complement
+        if(check == true) {
             result = -1 * ((Integer.parseInt(finalNum, 2)) + 1);
         }
     
-        //If the number is positive just convert it to an integer
-        else
-        {
+        // If the number is positive just convert it to an integer
+        else {
             result = Integer.parseInt(finalNum, 2);
         }
 
