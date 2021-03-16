@@ -6,10 +6,8 @@ package Previous_Labs;
 	*/
 	import java.util.*;
 	
-	public class Lab2A_furthest_away
-	{
-		public static void main(String args[] ) throws Exception 
-		{
+	public class Lab2A_furthest_away {
+		public static void main(String args[] ) throws Exception {
 			Scanner sc = new Scanner(System.in);
 
 			int one = sc.nextInt();
@@ -20,7 +18,6 @@ package Previous_Labs;
 			int max = Math.max(Math.max(one, two), three);
 			int middle = one + two + three - min - max;
 			
-			
 			//if(Math.abs(min - middle)==Math.abs(max - middle)) 
 
 			//If the min is further away from the middle than the max the min is the outlier
@@ -29,7 +26,8 @@ package Previous_Labs;
 
 			//If the max is further away from the middle than the min the max is the outlier
 			else 
-			System.out.println(max);
+			   	System.out.println(max);
+			
 			sc.close();
 		}
 	}
