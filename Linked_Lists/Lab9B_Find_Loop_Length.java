@@ -24,33 +24,24 @@ Constraints
 (courtesy of Tom Davies)
 **/
 
-public class Lab9B_Find_Loop_Length
-{
-	public static int findLoopLength(LinkedList myList)
-	{
-	   if(myList.isEmpty())
-	   {
-           return 0;		   
+public class Lab9B_Find_Loop_Length {
+	public static int findLoopLength(LinkedList myList) {
+	   if(myList.isEmpty()) {
+           	return 0;		   
 	   }
 
         Link current = myList.first;
-
         int count = 0;
-
         Link arr[] = new Link[100];
 
-        while(current.next != null)
-        {
+        while(current.next != null) {
             arr[count] = current;
 
-            for(int i = 0; i < count; i++)
-
-                if(arr[i] == current)
-                {
+            for(int i = 0; i < count; i++) {
+                if(arr[i] == current) {
                     return count-i;                	
                 }
-
-
+	    }
             count++;
             current = current.next;
         }
@@ -58,44 +49,35 @@ public class Lab9B_Find_Loop_Length
    }
 }
 
-class Link
-{
+class Link {
 	public String data;
 	public Link next;
 
-	public Link(String input)
-	{
+	public Link(String input) {
 		data = input;
 		next = null;
 	}
 }
 
-class LinkedList 
-{
+class LinkedList {
 	public Link first;
 
 	//Before inserts, the first value is null
-	public LinkedList()
-	{
+	public LinkedList() {
 		first = null;
 	}
 
 	//If empty the first node is equal to null value
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return (first == null);
 	}
 
 	//If the first node is empty, insert value.  Else, insert into the next node
-	public void insertHead(Link insert)
-	{
-		if(isEmpty())
-		{
+	public void insertHead(Link insert) {
+		if(isEmpty()) {
 			first = insert;
 		}
-
-		else
-		{
+		else {
 			insert.next = first;
 			first = insert;
 		}
