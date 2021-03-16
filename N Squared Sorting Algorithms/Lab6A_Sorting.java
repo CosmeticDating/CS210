@@ -56,10 +56,8 @@ The 3rd words in the list is "is"
 
 import java.util.*;   //(courtesy of Michael Sheridan)
 
-public class Lab6A_Sorting
-{
-    public static void main (String[]args)
-    {
+public class Lab6A_Sorting {
+    public static void main (String[]args) {
         Scanner scan = new Scanner (System.in);
 
         //read n, number of strings
@@ -73,8 +71,7 @@ public class Lab6A_Sorting
         //read strings
         String[]strings = new String[n];            
 
-        for(int i = 0; i<strings.length; i++)
-        {
+        for(int i = 0; i<strings.length; i++) {
             strings[i]= scan.nextLine();
         }
         
@@ -86,23 +83,18 @@ public class Lab6A_Sorting
         scan.close();
     }
 
-    public static void sort (String[]strings)
-    {
+    public static void sort (String[]strings) {
     	//Selection sort strings by length
-        for(int j = 0; j < strings.length - 1; j++)
-        {
+        for(int j = 0; j < strings.length - 1; j++) {
             int min = j;
             
-            for(int i = j + 1; i < strings.length; i++)
-            {        
-                if(compare(strings[i], strings[min]) < 0)
-                {
+            for(int i = j + 1; i < strings.length; i++) {        
+                if(compare(strings[i], strings[min]) < 0) {
                     min = i;
                 }
             }           
 
-            if(min != j)
-            {                                       
+            if(min != j) {                                       
                 String temp = strings[min];
                 strings[min] = strings[j];
                 strings[j] = temp;
@@ -111,14 +103,12 @@ public class Lab6A_Sorting
     }
     
     //compare strings
-    public static int compare (String s1, String s2)
-    {           
-    	//compare length
+    public static int compare (String s1, String s2) {           
+    	   //compare length
         int compare = s1.length() - s2.length();                
 
         //If the same length, compare alphabetically in reverse
-        if(compare == 0)
-        {                                    
+        if(compare == 0) {                                    
             compare = s2.compareTo(s1);
         }
         return compare;
