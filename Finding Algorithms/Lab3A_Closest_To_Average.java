@@ -3,20 +3,15 @@ package Solutions_2017;
 //FIND THE CLOSEST TO THE AVERAGE
 import java.util.Scanner;
 
-public class Lab3A_Closest_To_Average
-{ 
-    public static void main(String args[])
-    {
+public class Lab3A_Closest_To_Average { 
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
         int number = sc.nextInt();
-
         int[] arr =  new int[number];
-
         double sum = 0;       
 
-        for(int x = 0; x < arr.length; x++)
-        {
+        for(int x = 0; x < arr.length; x++) {
         	//Type in the integer values
             arr[x] = sc.nextInt();
 
@@ -24,7 +19,7 @@ public class Lab3A_Closest_To_Average
             sum = arr[x] + sum;
         }
 
-		//Calculate the average       
+	//Calculate the average       
         double average = (sum/arr.length);
 
 		/**
@@ -36,12 +31,10 @@ public class Lab3A_Closest_To_Average
         double closest = Math.abs(arr[0] - average);
         int index = 0;
 
-        for (int j = 0; j < arr.length; j++)
-        {
+        for (int j = 0; j < arr.length; j++) {
         	//When cycling through the for loop, store the value closest
         	//to the average in index
-            if (Math.abs(arr[j] - average) < closest)
-            {
+            if (Math.abs(arr[j] - average) < closest) {
               closest = Math.abs(arr[j] - average);
               index = j;
             }
