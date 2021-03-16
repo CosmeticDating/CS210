@@ -3,10 +3,8 @@ package Solutions_2017;
 //Find the outlier of 3 numbers
 import java.util.Scanner;
 
-public class Lab2A_find_outlier 
-{
-    public static void main(String args[] ) throws Exception 
-    {
+public class Lab2A_find_outlier {
+    public static void main(String args[] ) throws Exception {
         Scanner scan = new Scanner(System.in);
         
         //Input three numbers
@@ -23,23 +21,19 @@ public class Lab2A_find_outlier
         int ThreeDiff = Math.abs(num3 - avg);
         
         //Call an output for each possible result
-        if (OneDiff > TwoDiff && OneDiff > ThreeDiff) 
-        {
+        if (OneDiff > TwoDiff && OneDiff > ThreeDiff) {
             System.out.println(num1);
         }
         
-        else if (TwoDiff > OneDiff && TwoDiff > ThreeDiff) 
-        {
+        else if (TwoDiff > OneDiff && TwoDiff > ThreeDiff) {
             System.out.println(num2);
         }
         
-        else if (ThreeDiff > TwoDiff && ThreeDiff > OneDiff) 
-        {
+        else if (ThreeDiff > TwoDiff && ThreeDiff > OneDiff) {
             System.out.println(num3);
         }
         
-        else 
-        {
+        else {
             System.out.println("NA");
         }
         
