@@ -29,44 +29,32 @@ Sample Output
 
 import java.util.Scanner;
 
-public class Lab5A_Coin_Toss
-{
-    public static void main(String[] args)
-    {
+public class Lab5A_Coin_Toss {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         //The number of coin tosses
         double tosses = sc.nextInt();
         
-        //
         double bias = sc.nextInt();
-        
         double count = 0;
         
         //number of simulations
         double simulations = 1000;
         
-
-        for(int i = 0; i < simulations; i++)
-        {
+        for(int i = 0; i < simulations; i++) {
             double total = 0;
-
-            for(int j = 0; j < tosses; j++)
-            {
-                if(Math.random() < bias/100.0)
-                {
+            for(int j = 0; j < tosses; j++) {
+                if(Math.random() < bias/100.0) {
                     total++;
                 }
             }
 
-            if(total > tosses / 2.0)
-            {
+            if(total > tosses / 2.0) {
                 count++;
             }
         }
-
         System.out.println((count * 100/simulations));
         sc.close();
     }
-
 }
