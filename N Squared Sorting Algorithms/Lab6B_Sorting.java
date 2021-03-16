@@ -54,38 +54,27 @@ When sorted by exam scores, the class looks like
 
 import java.util.*;
 
-public class Lab6B_Sorting
-{
-    public static void main(String args[])
-    {
+public class Lab6B_Sorting {
+    public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
-
-        int n = Integer.parseInt(in.nextLine()), rank = Integer.parseInt(in.nextLine());
-
+        int n = Integer.parseInt(in.nextLine());
+        int rank = Integer.parseInt(in.nextLine());
         String[] b = new String[n];
-
         int[] a = new int[n];
 
-        for(int i = 0; i < n; i++) 
-        {
+        for(int i = 0; i < n; i++) {
             b[i] = in.nextLine();
             a[i] = Integer.parseInt(in.nextLine());
         }
-        
         insertion(a, b);
-
         System.out.println(b[n - rank]);
         in.close();
     }
 
-    public static void insertion(int[] a, String[] b) 
-    {
-        for(int i = 0; i < a.length - 1; i++) 
-        {
-            for(int j = i + 1; j < a.length; j++) 
-            {
-                if(a[i] > a[j]) 
-                {
+    public static void insertion(int[] a, String[] b) {
+        for(int i = 0; i < a.length - 1; i++) {
+            for(int j = i + 1; j < a.length; j++) {
+                if(a[i] > a[j]) {
                     swap(i, j, a);
                     swap(i, j, b);
                 }
@@ -93,15 +82,13 @@ public class Lab6B_Sorting
         }
     }
 
-    public static void swap(int x, int y, int[] a) 
-    {
+    public static void swap(int x, int y, int[] a) {
         int temp = a[x];
         a[x] = a[y];
         a[y] = temp;
     }
 
-    public static void swap(int x, int y, String[] b) 
-    {
+    public static void swap(int x, int y, String[] b) {
         String temp = b[x];
         b[x] = b[y];
         b[y] = temp;  
