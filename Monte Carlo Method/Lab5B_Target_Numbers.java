@@ -27,10 +27,8 @@ Sample Output
 
 import java.util.Scanner;
 
-public class Lab5B_Target_Numbers
-{
-    public static void main(String[] args)
-    {
+public class Lab5B_Target_Numbers {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int tosses = sc.nextInt();
@@ -39,31 +37,21 @@ public class Lab5B_Target_Numbers
         double count = 0;
         double simulations = 1000000;
 
-        for(int i = 0; i < simulations; i++)
-        {
+        for(int i = 0; i < simulations; i++) {
             int click = 0;
             int record = 0;
 
-            for(int j = 0; j < tosses; j++)
-            {
-                if(Math.random() > .5)
-                {
+            for(int j = 0; j < tosses; j++) {
+                if(Math.random() > .5) {
                     click++;
-
-                    if(click > record)
-                    {
+                    if(click > record) {
                         record = click;
                     }
-                }
-                
-                else
-                {
+                } else {
                     click = 0;
                 }
             }
-
-            if(record >= heads)
-            {
+            if(record >= heads) {
                 count++;
             }
         }
