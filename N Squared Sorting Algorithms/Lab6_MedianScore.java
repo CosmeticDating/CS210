@@ -6,10 +6,8 @@ package Previous_Labs;
  * You can assume that the number of students will always be odd.
 */
 import java.util.Scanner;
-public class Lab6_MedianScore
-{
-	public static void main(String args[])
-	{
+public class Lab6_MedianScore{
+ 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 
 		//Call in the length of the list
@@ -23,20 +21,17 @@ public class Lab6_MedianScore
 
 		//Scan in the name of the student with their 
 		//student score for each for loop cycle
-		for(int i = 0; i < n; i++)
-		{
+		for(int i = 0; i < n; i++) {
 			arr1[i] = sc.next();
 			arr2[i] = sc.nextInt();
 		}
 		
 		//Insertion sort
-		for(int i = 0; i < n; i++)
-		{ 
+		for(int i = 0; i < n; i++) { 
 			//begin the search by giving record one of the search values
 			int record = i;
 			
-			for(int j = i; j < n; j++)
-			{
+			for(int j = i; j < n; j++) {
 				if(arr2[j] < arr2[record])
 					
 					//Keep track of the smallest score
